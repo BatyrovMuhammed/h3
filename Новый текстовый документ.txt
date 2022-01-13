@@ -1,0 +1,163 @@
+CREATE TABLE sstudents1 (
+                           id SERIAL NOT NULL ,
+                           first_name VARCHAR(50),
+                           last_name VARCHAR(50),
+                           gender VARCHAR(50),
+                           age INT NOT NULL
+);
+INSERT INTO sstudents1 ( first_name, last_name, gender, age) VALUES ( 'Muhammed', 'Batyrov', 'Male', 2003);
+INSERT INTO sstudents1 ( first_name, last_name, gender, age) VALUES ( 'Rahim', 'Kurbanov', 'Male', 2007);
+INSERT INTO sstudents1 ( first_name, last_name, gender, age) VALUES ( 'Aisuluu', 'Batyrov', 'Female', 2001);
+INSERT INTO sstudents1 ( first_name, last_name, gender, age) VALUES ( 'Adilet', 'Ismailov', 'Male', 2000);
+INSERT INTO sstudents1 ( first_name, last_name, gender, age) VALUES ( 'Aijamal', 'Asangazieva', 'Female', 1995);
+INSERT INTO sstudents1 ( first_name, last_name, gender, age) VALUES ( 'Nurullo', 'Salimov', 'Male', 2004);
+
+SELECT * FROM sstudents1;
+
+UPDATE sstudents1
+SET first_name = 'Zyinatullo'
+WHERE first_name = 'Nurullo';
+
+SELECT * FROM sstudents1 ORDER BY first_name asc;
+SELECT * FROM sstudents1 ORDER BY first_name desc;
+DROP TABLE sstudents1;
+
+CREATE TABLE cars (
+                      id SERIAL NOT NULL ,
+                      name_car VARCHAR(50),
+                      model VARCHAR(50),
+                      year INT NOT NULL
+);
+INSERT INTO cars ( name_car, model, year) VALUES ( 'Chevrolet', 'Metro', 1999);
+INSERT INTO cars ( name_car, model, year) VALUES ( 'Spyker', 'C8', 2006);
+INSERT INTO cars ( name_car, model, year) VALUES ( 'Mercury', 'Cougar', 1988);
+INSERT INTO cars ( name_car, model, year) VALUES ( 'Land Rover', 'Range Rover', 1997);
+INSERT INTO cars ( name_car, model, year) VALUES ( 'Lexus', 'HS', 2011);
+
+SELECT * FROM cars ORDER BY name_car asc;
+
+SELECT * FROM cars ORDER BY name_car desc;
+
+DROP TABLE cars;
+
+CREATE TABLE animal (
+                        id SERIAL NOT NULL ,
+                        name_animal VARCHAR(50),
+                        age INT NOT NULL
+);
+INSERT INTO animal ( name_animal, age) VALUES ( 'Dog', 2);
+INSERT INTO animal ( name_animal, age) VALUES ( 'Cat', 8);
+INSERT INTO animal ( name_animal, age) VALUES ( 'Aheep', 4);
+INSERT INTO animal ( name_animal, age) VALUES ( 'Cow', 3);
+
+UPDATE animal
+SET name_animal = 'Daisy'
+WHERE name_animal = 'Dog';
+
+SELECT * FROM animal ORDER BY name_animal desc;
+
+CREATE TABLE birds (
+                       id SERIAL NOT NULL ,
+                       name_birds VARCHAR(50),
+                       age INT NOT NULL
+);
+INSERT INTO birds ( name_birds, age) VALUES ( 'Akkuu', 2);
+INSERT INTO birds ( name_birds, age) VALUES ( 'Burkut', 9);
+INSERT INTO birds ( name_birds, age) VALUES ( 'Ular', 5);
+INSERT INTO birds ( name_birds, age) VALUES ( 'Uku', 3);
+
+SELECT * FROM birds ORDER BY name_birds asc;
+
+DROP TABLE birds;
+
+CREATE TABLE states (
+                        id SERIAL NOT NULL ,
+                        state_name VARCHAR(50),
+                        center VARCHAR(50)
+);
+INSERT INTO states ( state_name, center) VALUES ( 'Россия', 'Москва');
+INSERT INTO states ( state_name, center) VALUES ( 'Кыргызстан', 'Бишкек');
+INSERT INTO states ( state_name, center) VALUES ( 'Казакстан', 'Астана');
+INSERT INTO states ( state_name, center) VALUES ( 'Озбекстан', 'Ташкент');
+
+UPDATE states
+SET center = 'Нурсултан'
+WHERE center = 'Астана';
+
+SELECT * FROM states ORDER BY center asc;
+
+CREATE TABLE movie (
+                       id SERIAL NOT NULL ,
+                       movie_name VARCHAR(50),
+                       year INT NOT NULL
+);
+INSERT INTO movie ( movie_name, year) VALUES ( 'Drama', 2009);
+INSERT INTO movie ( movie_name, year) VALUES ( 'Comedy', 2004);
+INSERT INTO movie ( movie_name, year) VALUES ('Comedy|Amanat', 2001);
+INSERT INTO movie ( movie_name, year) VALUES ( 'Ministirdin kyzynyn mahabaty', 2011);
+
+SELECT * FROM movie;
+SELECT movie_name FROM movie;
+
+CREATE TABLE area (
+                      id SERIAL NOT NULL ,
+                      area_name VARCHAR(50),
+                      symbol VARCHAR(50)
+);
+INSERT INTO area ( area_name, symbol) VALUES ( 'Баткен', 'Айгулу');
+INSERT INTO area ( area_name, symbol) VALUES ( '(Ош)', 'Сулайман-Тоо');
+INSERT INTO area ( area_name, symbol) VALUES ( 'Чуй', 'Бурана');
+INSERT INTO area ( area_name, symbol) VALUES ( 'Нарын', 'Таш-Рабат');
+INSERT INTO area ( area_name, symbol) VALUES ( 'Жалал-Абад', 'Сары-Челек');
+INSERT INTO area ( area_name, symbol) VALUES ( 'Талас', 'Манастын кумбозу');
+INSERT INTO area ( area_name, symbol) VALUES ( 'Ысык-Кол', 'Кол');
+
+SELECT  * FROM area;
+SELECT symbol FROM area;
+
+create table president (
+                           id SERIAL NOT NULL ,
+                           first_name VARCHAR(50),
+                           last_name VARCHAR(50),
+                           age INT NOT NULL
+);
+INSERT INTO president ( first_name, last_name, age) VALUES ( 'Аскар', 'Акаев', 60);
+INSERT INTO president ( first_name, last_name, age) VALUES ( 'Курбанбек', 'Бакиев', 56);
+INSERT INTO president ( first_name, last_name, age) VALUES ( 'Алмазбек', 'Атамбаев', 54);
+INSERT INTO president ( first_name, last_name, age) VALUES ( 'Сооронбай', 'Жээнбеков', 49);
+INSERT INTO president ( first_name, last_name, age) VALUES ( 'Садыр', 'Жапаров', 39);
+
+SELECT * FROM president;
+
+CREATE TABLE phone (
+                       id SERIAL not null ,
+                       phone_name VARCHAR(50),
+                       model VARCHAR(50),
+                       year INT NOT NULL,
+                       prike INT NOT NULL
+);
+INSERT INTO phone ( phone_name, model, year, prike) VALUES ( 'Ayphon', 'Apple', 2022, 100000);
+INSERT INTO phone ( phone_name, model, year, prike) VALUES ( 'Redmi note 9', 'xD', 2021, 73000);
+INSERT INTO phone ( phone_name, model, year, prike) VALUES ( 'Samsung', 'LX', 2022, 97000);
+INSERT INTO phone ( phone_name, model, year, prike) VALUES ( 'Non', 'Nokia', 2006, 1000);
+
+DELETE FROM phone WHERE year = 2006;
+DELETE FROM phone WHERE year < 2008;
+
+SELECT * FROM phone;
+
+CREATE TABLE products (
+                          id SERIAL PRIMARY KEY,
+                          productName VARCHAR(50) NOT NULL,
+                          manufacturer VARCHAR(50) NOT NULL,
+                          productCount INTEGER DEFAULT 0,
+                          price NUMERIC
+);
+INSERT INTO products  (productName, manufacturer, productCount, price)
+VALUES ('iPhone X', 'Apple', 2, 71000),
+       ('iPhone 8', 'Apple', 3, 56000),
+       ('Galaxy S9', 'Samsung', 6, 56000),
+       ('Galaxy S8 Plus', 'Samsung', 2, 46000),
+       ('Desire 12', 'HTC', 3, 26000);
+
+SELECT * FROM products WHERE manufacturer IN ('Samsung','Apple');
